@@ -1,0 +1,8 @@
+{% extends "admin/base.html" %}
+{% block title %}{{ title }} | {{ site_title|default:_('Cpanel') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name" class="whatever"><a href="{% url 'admin:index' %}">Cpanel</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

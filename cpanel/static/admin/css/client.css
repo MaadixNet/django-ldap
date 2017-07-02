@@ -1,0 +1,305 @@
+#loading .modal {
+   display: block;
+   background-color: rgba(254, 254, 254, 0.4);
+}
+
+#loading-image {
+  position: absolute;
+  top: 100px;
+  left: 240px;
+  z-index: 100;
+}
+#loadModal .modal-content {border: 0px;}
+
+
+
+#change, #hidden ,#new_user{
+    display: none;
+}
+form.standard select {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #55595c;
+  background-color: #fff;
+  background-image: none;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+.logo img {width:100%;max-width:50px;}
+.service-img img{max-width:100%;}
+.loading{ background-image: url("../images/spinner.gif");padding: 0 7px;background-repeat:no-repeat;background-position-y:3px}
+.tab-content a button.btn{white-space:normal;}
+/*Table style*/
+
+
+    /*
+    Max width before this PARTICULAR table gets nasty
+    This query will take effect for any screen smaller than 760px
+    and also iPads specifically.
+        */
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top:15px;
+    }
+    /* Zebra striping */
+    tr:nth-of-type(odd) {
+        background: #eee;
+    }
+    th {
+        background: #3a4651;
+        color: white;
+        font-weight: bold;
+    }
+    td, th {
+        padding: 6px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+	td .alert-danger, td .alert-error{
+	font-weight: bold;
+    padding: 2px 6px;
+	border-radius: 20px;
+	}
+td .alert {border-radius:12px; padding:3px;}
+/* Colums styyles */
+td.center{text-align:center;}
+i.checkok {color: #086673;background-color: #dff0d8;}
+i.checkko {color : #a30942;background-color: #f2dede;}
+span.isservice{
+  border: 1px solid #3a4651;
+  padding: 3px;
+  margin: 0 2px;
+}
+.hasaccess {color: #2a9615;}
+.noaccess {color: #FF6161;
+opacity: 0.6;} 
+.clear {clear:both;}
+/*.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {float:left;}
+.col-sm-2 {width: 20%;}
+.col-sm-3 {width: 25%;}
+.col-sm-4 {width: 33.3333%;}
+.col-sm-8 {width: 66.6667%;}
+.col-sm-10 {width: 80%;}
+.col-sm-9 {width: 75%;}
+.col-sm-12 {width: 100%;}
+*/
+.col-sm-4.form-control {width: 33.3333%;float:left;}
+#sidebarleft {border-right: 1px solid #ddd;}
+p.little {font-size:10px;}
+.menul li i {
+  display: inline-block;
+  cursor: pointer;
+}
+.menul li.active i {
+  display: none;
+}
+ul#menu-main-menu-m{margin:0;padding:2px 0;}
+ul.sub-menu {padding: 2px 1px;}
+.menul li i + i {
+  display: none;
+}
+
+.menul li.active i + i {
+  display: inline-block;
+}
+#menu-main-menu-m li {list-style: outside none none;word-break: break-all;}
+
+.sub-menu { display: none; }
+
+.arrowleft {
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #3a4651;
+    border-top: 10px solid transparent;
+    content: "";
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    width:0;
+}
+.arrowdown{
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    /*border-top: 10px solid #a30942;*/
+    content: "";
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    width:0;
+}
+span.counter {
+    background: none repeat scroll 0 0 #bbb;
+    border-radius: 9px;
+    color: white;
+    font-size: 15px;
+    padding: 2px 6px;
+}
+#sidebarleft a {text-decoration:none;}
+.sidebar .nav > li > ul > li > a i.arrow::before {
+      content: "\f105" !important;
+    }
+
+.sidebar .nav > li > ul > li.open > a i.arrow {
+          transform: rotate(90deg);
+        }
+.sidebar .nav > li > ul >li a i{ margin-right: 15px;}
+/* disk usage bar */
+
+.disk {
+    background-color: #167e8d;
+    border: 4px solid black;
+    margin-bottom: 5px;
+    padding: 2px;
+    width: 300px;
+}
+.used {
+    background: none repeat scroll 0 0 #c91c5c;
+    color: #fff;
+    display: block;
+    padding: 0;
+    text-align: right;
+}
+
+
+    .jumbotron .mobile {
+        margin-left: -164px;
+    }
+@media(max-width:979px){
+
+    #sidebarleft {
+        border-right: 1px solid #ddd;
+        padding: 0.8em;
+        word-wrap: break-word;
+    }
+    #sidebarleft ul {margin:0;}
+    #admin-content {
+        padding: 0;
+        width: 100%;
+            margin-top:25px;
+    }
+
+    .navbar-collapse {
+        float: right;
+    }
+    .navbar-inverse .navbar-nav > li > a {
+        font-size: 16px;
+        padding: 25px 12px;
+    }
+    .navbar > .container .navbar-brand,
+    .navbar > .container-fluid .navbar-brand {
+        font-size: 28px;
+        background-size: 35px auto;
+        float: left;
+        margin: 15px 0;
+        width: auto;
+    }
+    .navbar-inverse .navbar-brand .fa-stack {
+        font-size: 22px;
+    }
+    .navbar-nav {
+        float: left;
+    }
+	.nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a{display:none;}
+	.nav-collapse.in .nav > li > a, .nav-collapse.in .dropdown-menu a{display:block;}
+    .jumbotron {
+        padding-top: 100px;
+    }
+    .jumbotron .jumboText {
+        text-align: center;
+    }
+    .jumbotron h1 {
+        font-size: 64px;
+    }
+    .jumbotron .actionBtn {
+        margin-bottom: 50px;
+    }
+    .jumbotron .mobile {
+        margin-left: -48px;
+    }
+    #productWrap .imgWrap img {
+        margin: 0 auto 60px;
+    }
+    #contactWrap .blurb {
+        font-size: 20px;
+    }
+
+}
+
+	@media
+	only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+		tr { border: 1px solid #ccc; }
+
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50%;
+		}
+
+		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+
+		/*
+		Label the data
+		*/
+        table#vpn td:nth-of-type(1):before { content: "No."; }
+        table#vpn td:nth-of-type(2):before { content: "Usuario"; }
+        table#vpn td:nth-of-type(3):before { content: "Contraseña"; }
+        table#vpn td:nth-of-type(4):before { content: "Eliminar"; }
+
+        table#email td:nth-of-type(1):before { content: "Email"; }
+        table#email td:nth-of-type(2):before { content: "Nombre"; }
+        table#email td:nth-of-type(3):before { content: "Editar"; }
+        table#email td:nth-of-type(4):before { content: "Eliminar"; }
+
+        table#dns td:nth-of-type(1):before { content: "Tipo Registro"; }
+        table#dns td:nth-of-type(2):before { content: "Servicio"; }
+        table#dns td:nth-of-type(3):before { content: "Configuració Actual"; }
+        table#dns td:nth-of-type(4):before { content: "Configuración Redquerida"; }
+        table#vpn td:nth-of-type(5):before { content: "Estado"; }
+
+        table#users td:nth-of-type(1):before { content: "Usuario"; }
+        table#users td:nth-of-type(2):before { content: "Webmaster"; }
+        table#users td:nth-of-type(3):before { content: "SFTP"; }
+        table#users td:nth-of-type(4):before { content: "Editar"; }
+        table#users td:nth-of-type(5):before { content: "Eliminar";}
+
+        table#domains td:nth-of-type(1):before { content: "Dominio"; }
+        table#domains td:nth-of-type(2):before { content: "Cuentas email"; }
+        table#domains td:nth-of-type(3):before { content: "Administrador web"; }
+        table#domains td:nth-of-type(4):before { content: "DNS";} 
+        table#domains td:nth-of-type(5):before { content: "Activado";}
+        table#domains td:nth-of-type(6):before { content: "Editar"; }
+        table#domains td:nth-of-type(7):before { content: "Eliminar";}
+
+        table td.center {text-align:left;}
+
+	}
+

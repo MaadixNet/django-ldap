@@ -1,0 +1,126 @@
+{% load i18n static %}<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<script src="{% block loadstyles %}{% static "admin/js/styles.js" %}{% endblock %}"></script>
+<link rel="stylesheet" type="text/css" href="{% block mystylesheet %}{% static "admin/css/vendor.css" %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/client.css" %}{% endblock %}" />
+{% block extrastyle %}{% endblock %}
+{% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
+{% block extrahead %}{% endblock %}
+{% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
+</head>
+{% load i18n %}
+
+<body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}"
+  data-admin-utc-offset="{% now "Z" %}">
+
+<!-- Container -->
+<div id="mainwrapper">
+  <div class="app" id="app">
+    {% if not is_popup %}
+    <!-- Header -->
+    <header class="header">
+      <div class="header-block header-block-collapse hidden-lg-up"> <button class="collapse-btn" id="sidebar-collapse-btn">
+          <i class="fa fa-bars"></i>
+            </button> </div>
+          <div class="header-block header-block-search hidden-sm-down">
+          </div>
+          <div class="header-block header-block-buttons">
+          
+          </div>
+            <div class="header-block header-block-nav">
+                <ul class="nav-profile">
+                    <li class="profile dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user icon"></i> 
+                        <span class="name">{% firstof user.get_short_name user.get_username %}</span> </a>
+                        <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <a class="dropdown-item" href="profile.php"> <i class="fa fa-user icon"></i> Profile </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'admin:logout' %}"><i class="fa fa-power-off icon"></i>{% trans 'Log out' %}</a>
+
+                        </div>
+                    </li>
+                  </ul>
+        </div>
+        {% block usertools %}
+        {% if has_permission %}
+        <div id="user-tools">
+            {% block userlinks %}
+                {% if user.is_active and user.is_staff %}
+                  
+                {% endif %}
+                {% if user.has_usable_password %}
+                {% endif %}
+            {% endblock %}
+        </div>
+        {% endif %}
+        {% endblock %}
+        {% block nav-global %}{% endblock %}
+    </header>
+    <!-- END Header -->
+{% block sidebar %}
+{% include "admin/sidebar.html" %}
+{% endblock %}
+
+    {% block breadcrumbs %}
+    <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    </div>
+    {% endblock %}
+    {% endif %}
+
+    {% block messages %}
+        {% if messages %}
+        <ul class="messagelist">{% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|capfirst }}</li>
+        {% endfor %}</ul>
+        {% endif %}
+    {% endblock messages %}
+
+    <!-- Content -->
+    <div id="content" class="{% block coltype %}colM{% endblock %}">
+        {% block pretitle %}{% endblock %}
+        {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
+        {% block content %}
+        {% block object-tools %}{% endblock %}
+        {{ content }}
+        {% endblock %}
+        <br class="clear" />
+    </div>
+    <!-- END Content -->
+
+    {% block footer %}
+              <footer class="footer">
+                    <div class="footer-block buttons">
+
+                    </div>
+                    <div class="footer-block author">
+                        <ul>
+                            <li> Created by <a href="https://maadix.net">MaadiX</a> </li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- Reference block for JS -->
+        <div class="ref" id="ref">
+            <div class="color-primary"></div>
+            <div class="chart">
+                <div class="color-primary"></div>
+                <div class="color-secondary"></div>
+            </div>
+</div>
+      <script src="{% block loadvendorjs %}{% static "admin/js/vendor.min.js" %}{% endblock %}"></script>
+      <script src="{% block loadappjs %}{% static "admin/js/app.js" %}{% endblock %}"></script>
+      <script src="{% block loadcustom %}{% static "admin/js/customscript.js" %}{% endblock %}"></script>
+    
+    {% endblock %}
+  </div><!--main-wrapper-->
+</div>
+<!-- END Container -->
+
+</body>
+</html>
